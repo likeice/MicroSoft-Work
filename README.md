@@ -1,0 +1,4 @@
+# MicroSoft-Work
+paser用于从playpage中取出疑似listpage
+paserList用于从疑似listpage中解析出属于playpage的url
+（目前只把paser打包在lib中，这块已经在线上测试过；下载list目前还在线下，所以其他还没有放进来）
