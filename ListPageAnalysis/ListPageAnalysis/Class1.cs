@@ -14,7 +14,7 @@ namespace ListPageAnalysis
     public class HTMLParse
     {
         
-        static string[] exPattern = { ".css", ".jpg", ".xml", ".ico", ".png", "download", ".apk", "aboutus", "help" };
+        static string[] exPattern = { ".css", ".jpg", ".xml", ".ico", ".png", "download", ".apk", "aboutus", "help" }; //需要过滤的地方
         public static bool filter(string url)
         {
             url = url.Trim();
@@ -35,7 +35,7 @@ namespace ListPageAnalysis
         }
         public static string parser(string htmlResponse)
         {
-            HashSet<string> visited = new HashSet<string>();
+            HashSet<string> visited = new HashSet<string>();//用于同一页面的去重
             string result = "";
             
 
@@ -49,7 +49,7 @@ namespace ListPageAnalysis
                 if (nextp != -1)
                 {
                     string url = htmlResponse.Substring(pos, nextp - pos);
-                    url = url.Trim();  //次句未测试
+                    url = url.Trim();  
                     if (!visited.Contains(url))
                     {
                         
@@ -71,7 +71,7 @@ namespace ListPageAnalysis
             return result;
         }
 
-        public static string parserList(string htmlResponse)  //Regex.IsMatch(url, urlPattern2)
+        public static string parserList(string htmlResponse)  
         {
             HashSet<string> visited = new HashSet<string>();
             string urlPattern1 = @"^(http)://(www\.)(letv\.com)()/(ptv/\w+/\d+[\d/]*\.html)$";
@@ -89,7 +89,7 @@ namespace ListPageAnalysis
                 if (nextp != -1)
                 {
                     string url = htmlResponse.Substring(pos, nextp - pos);
-                    url = url.Trim();  //次句未测试
+                    url = url.Trim();  
                     if (!visited.Contains(url))
                     {
                         visited.Add(url);
